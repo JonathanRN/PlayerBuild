@@ -13,9 +13,6 @@ public class PlayerBuild
     {
         // Uncomment this line and its using statement to also build Addressables
         //AddressableAssetSettings.BuildPlayerContent();
-
-        string filename = $"{Application.productName}_v{Application.version}";
-        string foldername = $"{target}Build";
 	
 		BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
 		{
@@ -28,11 +25,11 @@ public class PlayerBuild
         string extension = EditorUserBuildSettings.buildAppBundle ? ".aab" : ".apk";
 		if (target == BuildTarget.Android)
         {
-            buildPlayerOptions.locationPathName = $"{foldername}/{filename}{extension}";
+            buildPlayerOptions.locationPathName = $"Build/{target}/{Application.productName}_v{Application.version}{extension}";
         }
         else
         {
-            buildPlayerOptions.locationPathName = $"{foldername}/{filename}";
+            buildPlayerOptions.locationPathName = $"Build/{target}";
         }
 
         BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
