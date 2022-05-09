@@ -1,0 +1,14 @@
+{
+    "name": "com.jroynoel.playerbuild",
+    "version": "1.0.0",
+    "displayName": "Player Build",
+    "description": "A simple build script made to be called from a CI pipeline.",
+    "unity": "2020.3",
+    "dependencies": {
+    },
+    "author": {
+        "name": "Jonathan Roy-Noel",
+        "email": "jonathan.roynoel@gmail.com",
+        "url": "https://www.github.com/jonathanrn"
+    }
+}
