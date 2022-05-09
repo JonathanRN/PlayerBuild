@@ -1,6 +1,6 @@
 {
     "name": "com.jroynoel.playerbuild",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "displayName": "Player Build",
     "description": "A simple build script made to be called from a CI pipeline.",
     "unity": "2020.3",
