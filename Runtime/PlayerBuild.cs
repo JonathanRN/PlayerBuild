@@ -14,18 +14,18 @@ public class PlayerBuild
         // Uncomment this line and its using statement to also build Addressables
         //AddressableAssetSettings.BuildPlayerContent();
 	
-		BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
-		{
-			// Grab all the scenes from the build player settings
-			scenes = EditorBuildSettings.scenes.Select(x => x.path).ToArray(),
-			target = target,
-			options = BuildOptions.None
-		};
+	BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
+	{
+		// Grab all the scenes from the build player settings
+		scenes = EditorBuildSettings.scenes.Select(x => x.path).ToArray(),
+		target = target,
+		options = BuildOptions.None
+	};
 	
-        string extension = EditorUserBuildSettings.buildAppBundle ? ".aab" : ".apk";
-		if (target == BuildTarget.Android)
+        //string extension = EditorUserBuildSettings.buildAppBundle ? ".aab" : ".apk";
+	if (target == BuildTarget.Android)
         {
-            buildPlayerOptions.locationPathName = $"Build/{target}/{Application.productName}_v{Application.version}{extension}";
+            buildPlayerOptions.locationPathName = $"Build/{target}/app.apk";
         }
         else
         {
@@ -48,19 +48,19 @@ public class PlayerBuild
 
     public static void BuildAndroid()
     {
-        Build(BuildTarget.Android);
+	Build(BuildTarget.Android);
     }
 
     public static void BuildiOS()
     {
-        Build(BuildTarget.iOS);
+	Build(BuildTarget.iOS);
     }
 	
 	public static void BuildStandaloneWindows()
 	{
 		Build(BuildTarget.StandaloneWindows);
 	}
-	
+
 	public static void BuildStandaloneOSX()
 	{
 		Build(BuildTarget.StandaloneOSX);
